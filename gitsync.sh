@@ -38,8 +38,8 @@ echo "project root ${root_dir}"
 
 git fetch upstream
 git fetch origin
-origin_branches=`git branch -a | grep "remotes/origin" | grep -v "remotes/origin/HEAD" | sed "s/.*remotes\/origin\#/g"`
-upstream_branches=`git branch -a | grep "remotes/upstream" | grep -v "remotes/upstream/HEAD" | sed "s/.*remotes\/upstream\#/g"`
+origin_branches=`git branch -a | grep "remotes/origin" | grep -v "remotes/origin/HEAD" | sed "s/.*remotes\/origin\///g"`
+upstream_branches=`git branch -a | grep "remotes/upstream" | grep -v "remotes/upstream/HEAD" | sed "s/.*remotes\/upstream\///g"`
 local_branches=`git branch -a | grep -v "remotes/upstream" | grep -v "remotes/origin"`
 
 is_in_list() {

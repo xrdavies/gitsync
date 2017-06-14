@@ -68,7 +68,7 @@ for branch in ${upstream_branches}; do
 			git push origin ${branch}
 		else
 			echo "${branch} exists in remotes/origin but not in local, merge it and push to origin"
-			git checkout origin/${branch}
+			git checkout -b ${branch} origin/${branch}
 			git merge upstream/${branch}
 			git push origin ${branch}
 		fi
